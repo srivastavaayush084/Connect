@@ -1,0 +1,12 @@
+# TrendTide Connect
+
+> India's fastest AI-powered influencer marketing marketplace, connecting brands with verified creators across Instagram, YouTube, LinkedIn and Snapchat.
+
+TrendTide Connect lets brands discover verified creators, launch campaigns in minutes, and track real ROI. Creators apply, get verified, and receive curated brand offers with transparent payouts.
+
+## Pages
+- [Home](/): Platform overview, featured creators, and success stories
+- [Browse Creators](/creators): Searchable marketplace of verified Indian creators
+- [Start a Campaign](/start-campaign): Multi-step brief builder for brands
+- [Join as a Creator](/join-creator): Application form for creators
+- [Pricing](/pricing): Starter, Growth and Enterprise plans
