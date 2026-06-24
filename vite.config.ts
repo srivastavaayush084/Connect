@@ -1,15 +1,48 @@
-// Shared TanStack/Vite configuration package includes the following — do NOT add them manually
-// or the app may break with duplicate plugins:
-//   - tanstackStart, viteReact, tailwindcss, tsConfigPaths, nitro (build-only using cloudflare as a default target),
-//     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
-//     error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { fileURLToPath } from "node:url";
+import { defineConfig, mergeConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+
+const tanstackStartDefaults = {
+  importProtection: {
+    behavior: "error",
+    client: {
+      files: ["**/server/**"],
+      specifiers: ["server-only"],
+    },
+  },
+};
 
 export default defineConfig({
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
+  plugins: [
+    tailwindcss(),
+    tanstackStart(
+      mergeConfig(tanstackStartDefaults, {
+        server: { entry: "server" },
+      }),
+    ),
+    react(),
+  ],
+  resolve: {
+    tsconfigPaths: true,
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+    dedupe: [
+      "react",
+      "react-dom",
+      "react/jsx-runtime",
+      "react/jsx-dev-runtime",
+      "@tanstack/react-query",
+      "@tanstack/query-core",
+    ],
+  },
+  css: {
+    transformer: "lightningcss",
+  },
+  server: {
+    host: "::",
+    port: 8080,
   },
 });
