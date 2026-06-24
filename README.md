@@ -2,6 +2,10 @@
 
 **Trendtide Connect** is a modern influencer marketing platform that connects brands with content creators to collaborate on impactful marketing campaigns. The platform provides an intuitive, responsive, and user-friendly interface for discovering creators, managing campaigns, and building successful brand partnerships.
 
+🌐 Live Demo
+
+🔗 Website: https://connect.srivastavaayush084.workers.dev/
+
 ## ✨ Features
 
 * 🎯 Modern and responsive UI
