@@ -4,6 +4,8 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 const tanstackStartDefaults = {
   importProtection: {
     behavior: "error",
@@ -15,15 +17,15 @@ const tanstackStartDefaults = {
 };
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    tanstackStart(
-      mergeConfig(tanstackStartDefaults, {
-        server: { entry: "server" },
-      }),
-    ),
-    react(),
-  ],
+  plugins: [tailwindcss(), tanstackStart(
+    mergeConfig(tanstackStartDefaults, {
+      server: { entry: "server" },
+    }),
+  ), react(), cloudflare({
+    viteEnvironment: {
+      name: "ssr"
+    }
+  })],
   resolve: {
     tsconfigPaths: true,
     alias: {
