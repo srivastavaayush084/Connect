@@ -6,8 +6,8 @@ const brands = [
   { icon: Target, title: "Select category", desc: "Pick verticals that match your product." },
   { icon: Wallet, title: "Set budget", desc: "Choose a tier from ₹10K to ₹5L+." },
   { icon: Search, title: "Discover creators", desc: "The best fit your goals" },
-  { icon: Rocket, title: "Launch campaign", desc: "Brief, approve and go live in minutes." },
   { icon: Globe, title: "Select language", desc: "Choose target languages for your campaign." },
+  { icon: Rocket, title: "Launch campaign", desc: "Brief, approve and go live in minutes." },
 ];
 
 const creators = [
