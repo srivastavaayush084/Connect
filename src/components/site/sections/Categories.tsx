@@ -40,12 +40,12 @@ export function Categories() {
             <div className="group relative block overflow-hidden rounded-2xl border border-border bg-card p-5 text-left transition-shadow hover:shadow-elev hover:scale-105">
               <div className="absolute inset-0 -z-10 bg-gradient-brand-soft opacity-0 transition-opacity group-hover:opacity-100" />
 
-              <Link to="/creators" search={{ category: c.name }} className="block">
+              <div className="block">
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-brand text-primary-foreground shadow-glow transition-transform group-hover:scale-110">
                   <c.icon className="h-5 w-5" />
                 </span>
                 <p className="mt-4 font-display font-semibold">{c.name}</p>
-              </Link>
+              </div>
 
               {/* Removed platform subcategory pills: show creators by category regardless of platform */}
             </div>

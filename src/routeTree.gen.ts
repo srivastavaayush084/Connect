@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as StartCampaignRouteImport } from './routes/start-campaign'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as JoinCreatorRouteImport } from './routes/join-creator'
-import { Route as CreatorsRouteImport } from './routes/creators'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -30,11 +29,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const JoinCreatorRoute = JoinCreatorRouteImport.update({
   id: '/join-creator',
   path: '/join-creator',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CreatorsRoute = CreatorsRouteImport.update({
-  id: '/creators',
-  path: '/creators',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -57,7 +51,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/creators': typeof CreatorsRoute
   '/join-creator': typeof JoinCreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start-campaign': typeof StartCampaignRoute
@@ -66,7 +59,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/creators': typeof CreatorsRoute
   '/join-creator': typeof JoinCreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start-campaign': typeof StartCampaignRoute
@@ -76,7 +68,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/creators': typeof CreatorsRoute
   '/join-creator': typeof JoinCreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start-campaign': typeof StartCampaignRoute
@@ -87,7 +78,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/creators'
     | '/join-creator'
     | '/sitemap.xml'
     | '/start-campaign'
@@ -96,7 +86,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/creators'
     | '/join-creator'
     | '/sitemap.xml'
     | '/start-campaign'
@@ -105,7 +94,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/creators'
     | '/join-creator'
     | '/sitemap.xml'
     | '/start-campaign'
@@ -115,7 +103,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  CreatorsRoute: typeof CreatorsRoute
   JoinCreatorRoute: typeof JoinCreatorRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StartCampaignRoute: typeof StartCampaignRoute
@@ -142,13 +129,6 @@ declare module '@tanstack/react-router' {
       path: '/join-creator'
       fullPath: '/join-creator'
       preLoaderRoute: typeof JoinCreatorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/creators': {
-      id: '/creators'
-      path: '/creators'
-      fullPath: '/creators'
-      preLoaderRoute: typeof CreatorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -179,7 +159,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  CreatorsRoute: CreatorsRoute,
   JoinCreatorRoute: JoinCreatorRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StartCampaignRoute: StartCampaignRoute,

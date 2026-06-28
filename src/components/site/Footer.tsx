@@ -50,14 +50,7 @@ export function Footer() {
         </div>
 
         <FooterCol title="Platform" links={[
-          { to: "/creators", label: "Browse Creators" },
           { to: "/start-campaign", label: "Start Campaign" },
-         
-        ]} />
-        <FooterCol title="Solutions" links={[
-          { to: "/creators", label: "Instagram Influencers" },
-          { to: "/creators", label: "YouTube Creators" },
-          { to: "/creators", label: "Micro Influencers" },
         ]} />
         <div className="text-left">
           <h4 className="font-display text-sm font-semibold">Company</h4>

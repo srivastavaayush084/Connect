@@ -22,9 +22,6 @@ export function FinalCTA() {
             <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
               <Link to="/start-campaign">Start campaign <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white/40 bg-white/10 text-white hover:bg-white/20">
-              <Link to="/creators">Browse creators</Link>
-            </Button>
           </div>
         </div>
       </div>
